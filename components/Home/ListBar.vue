@@ -3,7 +3,7 @@
     <button class="list-bar__button active">Популярное</button>
     <button class="list-bar__button">Свежее</button>
     <button class="list-bar__button">Моя лента</button>
-    <button class="list-bar__button">закладки</button>
+    <button class="list-bar__button">Закладки</button>
   </div>
 </template>
 
@@ -18,15 +18,17 @@
   padding: 20px;
   &__button {
     text-align: center;
-    width: 240px;
-    height: 49px;
+    width: 230px;
+    height: 44px;
     background: rgba(217, 217, 217, 0);
     border-radius: 10px;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 23px;
+    text-align: left;
+    padding-left: 20px;
     /* identical to box height */
 
     color: #3f3f3f;

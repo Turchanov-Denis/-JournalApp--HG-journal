@@ -31,6 +31,15 @@
             <img src="./actionBarImage/share.png" alt="favorites" />
           </button>
         </div>
+        <div class="action-bar__column">
+            <button class="action-bar__icon">
+            <img src="./actionBarImage/arrow.png" alt="favorites" style="opacity: 0.5;" />
+          </button>
+            <div class="action-bar__count">{{count}}</div>
+            <button class="action-bar__icon">
+            <img src="./actionBarImage/arrow.png" style="transform:scale(-1); opacity: 0.5;" alt="favorites" />
+          </button>
+        </div>
       </div>
     </div>
   </article>
@@ -38,7 +47,7 @@
   
   <script>
 export default {
-  props: ["title", "subtitle", "userName"],
+  props: ["title", "subtitle", "userName","count"],
   data() {
     return {};
   },
@@ -52,9 +61,9 @@ export default {
   align-items: center;
   width: 660px;
   height: 640px;
-  margin-top: 0 auto;
   background: rgb(253, 252, 252);
   border-radius: 10px;
+  margin: 0 auto;
   &__content {
     padding: 20px;
     display: flex;
@@ -88,6 +97,7 @@ export default {
   height: 50px;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   &__user-icon {
     width: 30px;
     height: 30px;
@@ -102,7 +112,7 @@ export default {
    height: 70px;
    display: flex;
    align-items: center;
-   justify-content: flex-start;
+   justify-content: space-between;
   &__column {
     display: flex;
     align-items: center;
@@ -116,5 +126,14 @@ export default {
       height: 100%;
     }
   }
+  &__count {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgb(71, 218, 52);
+  }
 }
+
 </style>

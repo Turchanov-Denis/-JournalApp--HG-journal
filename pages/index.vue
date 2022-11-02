@@ -4,9 +4,16 @@
       <ListBar></ListBar>
       <div class="content">
         <div class="articles">
-          <Article userName="Rafu" title="Операция «Мегалонгрид»: итоги краудфандинга и важное голосование" subtitle="Выбираем порядок выхода анонсированных текстов и два мегалонгрида."></Article>
+          <Article
+            userName="Rafu"
+            title="Операция «Мегалонгрид»: итоги краудфандинга и важное голосование"
+            subtitle="Выбираем порядок выхода анонсированных текстов и два мегалонгрида."
+            count="0"
+          ></Article>
         </div>
-        <div class="comments"></div>
+        <div class="comments">
+          <div class="comments__title">Комментарии</div>
+        </div>
       </div>
     </div>
   </div>
@@ -35,6 +42,19 @@ export default {
 }
 .articles {
   padding: 30px;
-
+  flex-grow: 1;
+}
+.content {
+  width: 100%;
+  display: flex;
+}
+.comments{
+  flex-grow: 0;
+  padding: 30px;
+  &__title {
+    writing-mode: vertical-rl;
+  /*text-orientation: sideways;*/
+  transform:scale(-1);
+  }
 }
 </style>
