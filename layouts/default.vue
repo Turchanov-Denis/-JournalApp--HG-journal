@@ -1,15 +1,21 @@
 <template>
   <div>
     <Header></Header>
-    <Nuxt />
+    <div class="home">
+      <div class="home__body">
+        <ListBar v-if="this.$store.state.main.activeListBar"></ListBar>
+        <Nuxt />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "../components/HeaderComponent/Header.vue";
+import ListBar from "../components/Home/ListBar.vue";
 export default {
   name: "DefaultLayout",
-  components: {Header},
+  components: { Header, ListBar },
   data() {
     return {
       clipped: false,
@@ -39,5 +45,13 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import '../assets/_nullstyle.scss'
+@import "../assets/_nullstyle.scss";
+.home {
+  background: #f2f2f2;
+  min-height: 800px;
+  padding-top: 20px;
+  &__body {
+    display: flex;
+  }
+}
 </style>

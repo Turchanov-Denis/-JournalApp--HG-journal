@@ -1,9 +1,13 @@
 <template>
   <header class="header">
     <div class="header__body">
-      <div style="display: flex; width: 120px;align-items: center;justify-content: space-between;">
+      <div
+        style="display: flex;width: 120px;align-items: center;justify-content: space-between;"
+      >
         <Burger></Burger>
-        <div class="header__title">H&G</div>
+        <NuxtLink to="/">
+          <div class="header__title">H&G</div>
+        </NuxtLink>
       </div>
       <Input></Input>
       <button class="header__create-button">+ Создать</button>

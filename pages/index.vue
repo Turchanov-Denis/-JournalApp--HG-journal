@@ -1,49 +1,41 @@
 <template>
-  <div class="home">
-    <div class="home__body">
-      <ListBar v-if="this.$store.state.main.activeListBar"></ListBar>
-      <div class="content">
+  <div class="content">
+    <div
+      class="articles"
+      v-for="article in this.$store.state.articles.articles"
+      :key="article.id"
+    >
+      <Article
+        :userName="article.userName"
+        :title="article.title"
+        :subtitle="article.subtitle"
+        :count="article.count"
+      ></Article>
+    </div>
+    <div class="comments">
+      <button
+        @click="
+          () => {
+            this.$store.commit('main/changeActiveComment');
+          }
+        "
+      >
         <div
-          class="articles"
-          v-for="article in this.$store.state.articles.articles"
-          :key="article.id"
+          :class="
+            this.$store.state.main.activeComment
+              ? 'comments__title'
+              : 'comments__title_active'
+          "
         >
-          <Article
-            :userName="article.userName"
-            :title="article.title"
-            :subtitle="article.subtitle"
-            :count="article.count"
-          ></Article>
+          Комментарии
         </div>
-        <div class="comments">
-          <button
-            @click="
-              () => {
-                this.$store.commit('main/changeActiveComment');
-              }
-            "
-          >
-            <div
-              :class="
-                this.$store.state.main.activeComment
-                  ? 'comments__title'
-                  : 'comments__title_active'
-              "
-            >
-              Комментарии
-            </div>
-          </button>
-          <div
-            class="comments__content"
-            v-for="comment in this.$store.state.comments.comments"
-            :key="comment.id"
-          >
-            <Comment
-              :userName="comment.userName"
-              :text="comment.text"
-            ></Comment>
-          </div>
-        </div>
+      </button>
+      <div
+        class="comments__content"
+        v-for="comment in this.$store.state.comments.comments"
+        :key="comment.id"
+      >
+        <Comment :userName="comment.userName" :text="comment.text"></Comment>
       </div>
     </div>
   </div>
@@ -66,14 +58,7 @@ export default {
 </script>
 
 <style lang="scss">
-.home {
-  background: #f2f2f2;
-  min-height: 800px;
-  padding-top: 20px;
-  &__body {
-    display: flex;
-  }
-}
+
 .articles {
   padding: 30px;
   flex-grow: 1;

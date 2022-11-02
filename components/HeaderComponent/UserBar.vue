@@ -12,9 +12,10 @@
         </button>
       </div>
       <div class="user-bar__column">
-        <button class="user-bar__icon user-bar__icon_avatar">
-          <img src="./UserBarImage/avatar.png" alt="favorites" />
-        </button>
+        <NuxtLink to="/user"
+          ><button class="user-bar__icon user-bar__icon_avatar">
+            <img src="./UserBarImage/avatar.png" alt="favorites" /></button
+        ></NuxtLink>
       </div>
     </div>
   </div>
@@ -36,8 +37,8 @@
   }
 
   &__icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     img {
       width: 100%;
       height: 100%;
