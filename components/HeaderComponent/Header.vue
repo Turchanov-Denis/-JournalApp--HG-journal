@@ -23,7 +23,7 @@ export default {
 
 <style lang="scss">
 .header {
-  padding: 10px;
+  padding: 0 30px;
   height: 83px;
   width: 100%;
   background: #ffdce3;
