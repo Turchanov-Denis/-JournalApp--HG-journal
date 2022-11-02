@@ -1,4 +1,4 @@
-# hedgehog-jornal
+# Hedge&Hog Jornal
 
 ## Build Setup
 

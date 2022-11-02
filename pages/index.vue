@@ -12,7 +12,7 @@
           ></Article>
         </div>
         <div class="comments">
-          <div class="comments__title">Комментарии</div>
+          <button @click="()=>{this.$store.commit('main/changeActiveComment')}"><div :class=" this.$store.state.main.activeComment ? 'comments__title' : 'comments__title_active'">Комментарии</div></button>
           <div class="comments__content">
             <Comment
               userName="Rafu"
@@ -63,8 +63,16 @@ export default {
   &__title {
     // writing-mode: vertical-rl;
     // transform: scale(-1);
+    
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgb(23, 23, 23);
     &_active {
-      
+      writing-mode: vertical-rl;
+    transform: scale(-1);
     }
   }
 }
