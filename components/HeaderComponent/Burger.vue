@@ -14,6 +14,7 @@
   height: 25px;
   width: 25px;
   justify-content: space-between;
+  cursor: pointer;
 }
 span {
   display: block;
