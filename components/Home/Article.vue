@@ -59,7 +59,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 660px;
+  width: 640px;
   height: 640px;
   background: rgb(253, 252, 252);
   border-radius: 10px;
@@ -89,7 +89,7 @@ export default {
   }
   &__image {
     width: 100%;
-    height: 400px;
+    height: 405px;
   }
 }
 .article-header {

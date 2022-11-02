@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="home__body">
-      <ListBar></ListBar>
+      <ListBar v-if="this.$store.state.main.activeListBar"></ListBar>
       <div class="content">
         <div class="articles">
           <Article
@@ -44,7 +44,8 @@ export default {
 <style lang="scss">
 .home {
   background: #f2f2f2;
-  height: 100vh;
+  min-height: 800px;
+  padding-top: 20px;
   &__body {
     display: flex;
   }

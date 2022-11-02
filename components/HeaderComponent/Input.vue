@@ -6,12 +6,12 @@
 <style lang="scss">
 .find-input {
   width: 519px;
-  height: 53px;
+  height: 42px;
   left: 513px;
   top: 16px;
   background: #edc1ca;
   border-radius: 6px;
-  padding-left: 10px;
+  padding-left: 20px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;

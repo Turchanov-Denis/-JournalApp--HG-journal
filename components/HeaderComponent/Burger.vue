@@ -1,5 +1,5 @@
 <template>
-  <div class="menu__icon">
+  <div class="menu__icon" @click="()=>{this.$store.commit('main/changeListBar')}">
     <span></span>
     <span></span>
     <span></span>
@@ -11,14 +11,14 @@
 .menu__icon {
   display: flex;
   flex-direction: column;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   justify-content: space-between;
   cursor: pointer;
 }
 span {
   display: block;
-  width: 41px;
+  width: 31px;
   height: 3px;
   background: #000000;
 }

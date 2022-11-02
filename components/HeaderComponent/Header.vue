@@ -1,8 +1,10 @@
 <template>
   <header class="header">
     <div class="header__body">
-      <Burger></Burger>
-      <div class="header__title">H&G</div>
+      <div style="display: flex; width: 120px;align-items: center;justify-content: space-between;">
+        <Burger></Burger>
+        <div class="header__title">H&G</div>
+      </div>
       <Input></Input>
       <button class="header__create-button">+ Создать</button>
       <UserBar></UserBar>
@@ -23,8 +25,8 @@ export default {
 
 <style lang="scss">
 .header {
-  padding: 0 30px;
-  height: 83px;
+  padding: 0 40px;
+  height: 60px;
   width: 100%;
   background: #ffdce3;
   &__body {
@@ -45,7 +47,7 @@ export default {
   }
   &__create-button {
     width: 144px;
-    height: 49px;
+    height: 48px;
 
     background: #ffffff;
     border-radius: 8px;
