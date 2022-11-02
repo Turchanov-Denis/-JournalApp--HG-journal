@@ -1,0 +1,62 @@
+<template>
+  <header class="header">
+    <div class="header__body">
+      <Burger></Burger>
+      <div class="header__title">H&G</div>
+      <Input></Input>
+      <button class="header__create-button">+ Создать</button>
+      <UserBar></UserBar>
+    </div>
+  </header>
+</template>
+
+
+<script>
+import Burger from "./Burger.vue";
+import Input from "./Input.vue";
+import UserBar from "./UserBar.vue";
+export default {
+  components: { Burger, Input, UserBar },
+};
+</script>
+
+
+<style lang="scss">
+.header {
+  padding: 10px;
+  height: 83px;
+  width: 100%;
+  background: #ffdce3;
+  &__body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #000000;
+  }
+  &__create-button {
+    width: 144px;
+    height: 49px;
+
+    background: #ffffff;
+    border-radius: 8px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    /* identical to box height */
+
+    color: #3f3f3f;
+  }
+}
+</style>
