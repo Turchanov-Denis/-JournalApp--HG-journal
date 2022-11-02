@@ -3,20 +3,44 @@
     <div class="home__body">
       <ListBar v-if="this.$store.state.main.activeListBar"></ListBar>
       <div class="content">
-        <div class="articles">
+        <div
+          class="articles"
+          v-for="article in this.$store.state.articles.articles"
+          :key="article.id"
+        >
           <Article
-            userName="Rafu"
-            title="Операция «Мегалонгрид»: итоги краудфандинга и важное голосование"
-            subtitle="Выбираем порядок выхода анонсированных текстов и два мегалонгрида."
-            count="0"
+            :userName="article.userName"
+            :title="article.title"
+            :subtitle="article.subtitle"
+            :count="article.count"
           ></Article>
         </div>
         <div class="comments">
-          <button @click="()=>{this.$store.commit('main/changeActiveComment')}"><div :class=" this.$store.state.main.activeComment ? 'comments__title' : 'comments__title_active'">Комментарии</div></button>
-          <div class="comments__content">
+          <button
+            @click="
+              () => {
+                this.$store.commit('main/changeActiveComment');
+              }
+            "
+          >
+            <div
+              :class="
+                this.$store.state.main.activeComment
+                  ? 'comments__title'
+                  : 'comments__title_active'
+              "
+            >
+              Комментарии
+            </div>
+          </button>
+          <div
+            class="comments__content"
+            v-for="comment in this.$store.state.comments.comments"
+            :key="comment.id"
+          >
             <Comment
-              userName="Rafu"
-              text="Последняя демка на технологиях анрила все же была вполне себе играбельной на актуальных"
+              :userName="comment.userName"
+              :text="comment.text"
             ></Comment>
           </div>
         </div>
@@ -64,7 +88,7 @@ export default {
   &__title {
     // writing-mode: vertical-rl;
     // transform: scale(-1);
-    
+
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
@@ -73,7 +97,7 @@ export default {
     color: rgb(23, 23, 23);
     &_active {
       writing-mode: vertical-rl;
-    transform: scale(-1);
+      transform: scale(-1);
     }
   }
 }
