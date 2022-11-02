@@ -13,6 +13,12 @@
         </div>
         <div class="comments">
           <div class="comments__title">Комментарии</div>
+          <div class="comments__content">
+            <Comment
+              userName="Rafu"
+              text="Последняя демка на технологиях анрила все же была вполне себе играбельной на актуальных"
+            ></Comment>
+          </div>
         </div>
       </div>
     </div>
@@ -22,12 +28,15 @@
 <script>
 import ListBar from "../components/Home/ListBar.vue";
 import Article from "../components/Home/Article.vue";
+import Comment from "../components/Home/Comment.vue";
+
 export default {
   name: "IndexPage",
   layout: "default",
   components: {
     ListBar,
     Article,
+    Comment,
   },
 };
 </script>
@@ -48,13 +57,15 @@ export default {
   width: 100%;
   display: flex;
 }
-.comments{
+.comments {
   flex-grow: 0;
   padding: 30px;
   &__title {
-    writing-mode: vertical-rl;
-  /*text-orientation: sideways;*/
-  transform:scale(-1);
+    // writing-mode: vertical-rl;
+    // transform: scale(-1);
+    &_active {
+      
+    }
   }
 }
 </style>
