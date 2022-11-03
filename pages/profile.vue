@@ -6,15 +6,12 @@
 
 
 <script>
-import UserDescription from '../components/User/UserDescription.vue';
+import UserDescription from '../components/Profile/UserDescription.vue';
 
 export default {
-    component: {UserDescription},
-    data(){
-        return {
-            
-        }
-    }
+    components: {UserDescription},
+    layout: 'default',
+    
 }
 
 </script>

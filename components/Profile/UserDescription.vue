@@ -17,7 +17,14 @@
         <button class="tab">Черновики</button>
       </div>
     </div>
-    <div style="display: flex; align-items: start;justify-content:space-between;padding-top: 20px;">
+    <div
+      style="
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        padding-top: 20px;
+      "
+    >
       <ArticleTool></ArticleTool> <Subscribers></Subscribers>
     </div>
   </div>

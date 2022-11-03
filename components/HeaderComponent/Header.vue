@@ -10,7 +10,7 @@
         </NuxtLink>
       </div>
       <Input></Input>
-      <button class="header__create-button">+ Создать</button>
+      <Nuxt-link to="/write"><button class="header__create-button">+ Создать</button></Nuxt-link>
       <UserBar></UserBar>
     </div>
   </header>

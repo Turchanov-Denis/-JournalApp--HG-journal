@@ -12,7 +12,7 @@
         </button>
       </div>
       <div class="user-bar__column">
-        <NuxtLink to="/user"
+        <NuxtLink to="/profile"
           ><button class="user-bar__icon user-bar__icon_avatar">
             <img src="./UserBarImage/avatar.png" alt="favorites" /></button
         ></NuxtLink>
