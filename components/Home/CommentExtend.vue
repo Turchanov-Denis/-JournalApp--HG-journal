@@ -22,8 +22,8 @@ export default {
   
   
   <style lang="scss">
-.comment-extend {
-  width: 520px;
+.comments-extend {
+  width: 100%;
   &__text {
     font-family: "Roboto";
     font-style: normal;

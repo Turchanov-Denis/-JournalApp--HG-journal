@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%">
+  <div class="article-content" style="width: 100%">
     <ArticleExtand
       :title="getArticle.title"
       :userName="getArticle.userName"
@@ -9,15 +9,13 @@
 
     <div class="comments-extend">
       <div class="comments-extend__container">
-        <div  class="comments-extend__title">Комментарии</div>
-        <v-textarea
-             
-            solo
-            name="input-7-4"
-            label="Комментарий"
-          ></v-textarea>
+        <div class="comments-extend__title">10 Комментариев</div>
+        <div class="textarea-container">
+          <v-textarea solo name="input-7-4" label="Комментарий"></v-textarea>
+          <button>Отправить</button>
+        </div>
       </div>
-      
+
       <div
         class="comments-extend__content"
         v-for="comment in this.$store.state.comments.comments"
@@ -52,6 +50,34 @@ export default {
 
 
 <style lang="scss">
+.textarea-container {
+  position: relative;
+}
+.textarea-container textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.textarea-container button {
+  width: 112px;
+  height: 40px;
+
+  background: #4683d9;
+  border-radius: 8px;
+  opacity: 0.5;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  /* identical to box height */
+
+  color: #fefefe;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 10px 50px 0;
+}
 .comments-extend {
   padding: 30px 0;
   background: rgb(253, 252, 252);
@@ -64,17 +90,16 @@ export default {
   }
   &__container {
     display: block;
-    width: 520px;
+    width: 580px;
     margin: 0 auto;
   }
   &__title {
-    
     text-align: left;
     padding: 15px 0;
     font-family: "Roboto";
     font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
+    font-weight: 500;
+    font-size: 20px;
     line-height: 23px;
     color: rgb(23, 23, 23);
   }

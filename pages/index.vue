@@ -1,5 +1,5 @@
 <template>
-  <div class="content">
+  <div class="article-content">
     <div
       class="articles"
       v-for="article in this.$store.state.articles.articles"
@@ -34,7 +34,22 @@ export default {
 </script>
 
 <style lang="scss">
+.article-content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  scroll-snap-type: y mandatory;
+  align-items: center;
+  
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+  display: none;
+}
+}
 .articles {
+  
   padding: 30px;
   flex-grow: 1;
 }

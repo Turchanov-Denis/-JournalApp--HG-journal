@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style>
     <Header></Header>
     <div class="home">
       <div class="home__body">
@@ -72,6 +72,13 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import '../assets/nullstyle.scss';
+body {
+  overflow: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
 .comments {
   flex-grow: 0;
   padding: 30px;
@@ -85,8 +92,7 @@ export default {
     font-size: 20px;
     line-height: 23px;
     color: rgb(23, 23, 23);
-    writing-mode: vertical-rl;
-      transform: scale(-1);
+    
     &_active {
       writing-mode: vertical-rl;
       transform: scale(-1);
