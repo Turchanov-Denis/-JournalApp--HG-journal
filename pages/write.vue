@@ -1,6 +1,7 @@
 <template>
-    <div>
+    <div style="margin:20px auto;max-width: 700px;">
       <!-- Use the component in the right place of the template -->
+      <UserIcon></UserIcon>
       <tiptap-vuetify
         v-model="content"
         :extensions="extensions"
@@ -11,10 +12,11 @@
   <script>
   // import the component and the necessary extensions
   import { TiptapVuetify, Heading, Bold, Italic, Strike, Underline, Code, Paragraph, BulletList, OrderedList, ListItem, Link, Blockquote, HardBreak, HorizontalRule, History } from 'tiptap-vuetify'
-  
+  import UserIcon from '../components/Profile/UserIcon.vue';
   export default {
     // specify TiptapVuetify component in "components"
-    components: { TiptapVuetify },
+    components: { TiptapVuetify,UserIcon },
+    layout: 'write',
     data: () => ({
       // declare extensions you want to use
       extensions: [
@@ -40,8 +42,7 @@
       ],
       // starting editor's content
       content: `
-        <h1>Yay Headlines!</h1>
-        <p>All these <strong>cool tags</strong> are working now.</p>
+        <h1>Hedge&Hog</h1>
       `
     })
   }

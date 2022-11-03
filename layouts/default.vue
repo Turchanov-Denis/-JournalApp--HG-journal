@@ -45,7 +45,6 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import "../assets/_nullstyle.scss";
 .home {
   background: #f2f2f2;
   min-height: 800px;
@@ -53,5 +52,8 @@ export default {
   &__body {
     display: flex;
   }
+}
+span {
+  height: 0;
 }
 </style>
