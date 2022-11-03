@@ -1,5 +1,5 @@
 <template>
-    <div style="margin:20px auto;max-width: 700px;">
+    <div style="margin:20px auto;max-width: 700px; " data-app>
       <!-- Use the component in the right place of the template -->
       <UserIcon></UserIcon>
       <tiptap-vuetify
@@ -11,7 +11,7 @@
   
   <script>
   // import the component and the necessary extensions
-  import { TiptapVuetify, Heading, Bold, Italic, Strike, Underline, Code, Paragraph, BulletList, OrderedList, ListItem, Link, Blockquote, HardBreak, HorizontalRule, History } from 'tiptap-vuetify'
+  import { TiptapVuetify, Heading, Bold, Italic, Strike, Underline, Code, Paragraph, BulletList, OrderedList, ListItem, Link, Blockquote, HardBreak, HorizontalRule, History,Image } from 'tiptap-vuetify'
   import UserIcon from '../components/Profile/UserIcon.vue';
   export default {
     // specify TiptapVuetify component in "components"
@@ -28,6 +28,7 @@
         Italic,
         ListItem,
         BulletList,
+        Image,
         OrderedList,
         [Heading, {
           options: {

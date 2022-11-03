@@ -7,14 +7,25 @@
 
 
 <script>
-
-import Header from '../components/HeaderComponent/Header.vue';
+import Header from "../components/HeaderComponent/Header.vue";
 
 export default {
-  components:{
-    Header
-  }
-}
-
+  components: {
+    Header,
+  },
+};
 </script>
 
+<style lang="scss">
+.v-ripple__container {
+  display: none;
+}
+.v-card__title {
+ span {
+  width: 150px;
+  height: 0;
+  background: rgba(255, 255, 255, 0);
+  transform: scale(1);
+ }
+}
+</style>
