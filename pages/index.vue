@@ -15,39 +15,13 @@
         ></Article
       ></Nuxt-link>
     </div>
-    <div class="comments">
-      <button
-        @click="
-          () => {
-            this.$store.commit('main/changeActiveComment');
-          }
-        "
-      >
-        <div
-          :class="
-            this.$store.state.main.activeComment
-              ? 'comments__title'
-              : 'comments__title_active'
-          "
-        >
-          Комментарии
-        </div>
-      </button>
-      <div
-        class="comments__content"
-        v-for="comment in this.$store.state.comments.comments"
-        :key="comment.id"
-      >
-        <Comment :userName="comment.userName" :text="comment.text"></Comment>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 import ListBar from "../components/Home/ListBar.vue";
 import Article from "../components/Home/Article.vue";
-import Comment from "../components/Home/Comment.vue";
+
 
 export default {
   name: "IndexPage",
@@ -55,7 +29,6 @@ export default {
   components: {
     ListBar,
     Article,
-    Comment,
   },
 };
 </script>

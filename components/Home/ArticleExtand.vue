@@ -1,6 +1,6 @@
 <template>
-  <article class="article">
-    <div class="article__content">
+  <article class="article-extend">
+    <div class="article-extend__content">
       <!-- header -->
       <div class="article-header">
         <img
@@ -12,10 +12,10 @@
       <!-- title -->
       <div class="article__title">{{ title }}</div>
       <div class="article__subtitle">{{ subtitle }}</div>
-      </div>
-      <!-- main image -->
-    <img class="article__image" src="./article.png" />
-    <div class="article__content">
+    </div>
+    <!-- main image -->
+    <img class="article-extend__image" src="./article.png" />
+    <div class="article-extend__content">
       <!-- action bar -->
       <div class="action-bar">
         <div class="action-bar__column" style="width: 320px">
@@ -63,17 +63,18 @@ export default {
 </script>
   
     <style lang="scss">
-.article {
+.article-extend {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 640px;
+
   background: rgb(253, 252, 252);
   border-radius: 10px;
   margin: 0 auto;
-    flex-grow: 1;
+  flex-grow: 1;
   &__content {
+    width: 800px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -97,8 +98,8 @@ export default {
     color: rgb(23, 23, 23);
   }
   &__image {
-   width: 100%;
-   height: 100%;
+    width: 90%;
+    
   }
 }
 .article-header {

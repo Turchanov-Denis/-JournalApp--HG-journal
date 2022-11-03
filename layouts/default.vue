@@ -5,6 +5,32 @@
       <div class="home__body">
         <ListBar v-if="this.$store.state.main.activeListBar"></ListBar>
         <Nuxt />
+        <div class="comments">
+      <button
+        @click="
+          () => {
+            this.$store.commit('main/changeActiveComment');
+          }
+        "
+      >
+        <div
+          :class="
+            this.$store.state.main.activeComment
+              ? 'comments__title'
+              : 'comments__title_active'
+          "
+        >
+          Комментарии
+        </div>
+      </button>
+      <div
+        class="comments__content"
+        v-for="comment in this.$store.state.comments.comments"
+        :key="comment.id"
+      >
+        <Comment :userName="comment.userName" :text="comment.text"></Comment>
+      </div>
+    </div>
       </div>
     </div>
   </div>
