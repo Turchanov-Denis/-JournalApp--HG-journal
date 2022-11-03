@@ -72,6 +72,27 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+.comments {
+  flex-grow: 0;
+  padding: 30px;
+  &__title {
+    // writing-mode: vertical-rl;
+    // transform: scale(-1);
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgb(23, 23, 23);
+    writing-mode: vertical-rl;
+      transform: scale(-1);
+    &_active {
+      writing-mode: vertical-rl;
+      transform: scale(-1);
+    }
+  }
+}
 .home {
   background: #f2f2f2;
   min-height: 800px;

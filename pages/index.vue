@@ -42,23 +42,5 @@ export default {
   width: 100%;
   display: flex;
 }
-.comments {
-  flex-grow: 0;
-  padding: 30px;
-  &__title {
-    // writing-mode: vertical-rl;
-    // transform: scale(-1);
 
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 23px;
-    color: rgb(23, 23, 23);
-    &_active {
-      writing-mode: vertical-rl;
-      transform: scale(-1);
-    }
-  }
-}
 </style>
