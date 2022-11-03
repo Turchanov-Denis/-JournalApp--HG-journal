@@ -13,9 +13,10 @@
 <script>
 import Header from "../components/HeaderComponent/Header.vue";
 import ListBar from "../components/Home/ListBar.vue";
+import Comment from '../components/Home/Comment.vue'
 export default {
   name: "DefaultLayout",
-  components: { Header, ListBar },
+  components: { Header, ListBar,Comment },
   data() {
     return {
       clipped: false,
@@ -51,9 +52,14 @@ export default {
   padding-top: 20px;
   &__body {
     display: flex;
+
   }
 }
-span {
+.v-btn__content {
+  
   height: 0;
+}
+a {
+  text-decoration: none;
 }
 </style>

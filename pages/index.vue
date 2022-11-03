@@ -5,12 +5,15 @@
       v-for="article in this.$store.state.articles.articles"
       :key="article.id"
     >
-      <Article
-        :userName="article.userName"
-        :title="article.title"
-        :subtitle="article.subtitle"
-        :count="article.count"
-      ></Article>
+      <Nuxt-link :to="'/article/' +  article.id"
+        ><Article
+          
+          :title="article.title"
+          :userName="article.userName"
+          :subtitle="article.subtitle"
+          :count="article.count"
+        ></Article
+      ></Nuxt-link>
     </div>
     <div class="comments">
       <button
@@ -58,7 +61,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .articles {
   padding: 30px;
   flex-grow: 1;
