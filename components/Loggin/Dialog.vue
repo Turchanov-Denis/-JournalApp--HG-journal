@@ -32,9 +32,9 @@
             </button>
           </div>
 
-          <!-- <div class="log-field__entire">
-            Есть аккаунт? <a href="#">Войти</a>
-          </div> -->
+          <div class="log-field__entire" >
+            Нет аккаунта? <a href="#">Регистрация</a>
+          </div>
         </div>
       </div>
       
@@ -173,8 +173,8 @@ export default {
   flex: 0 0 420px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  padding-left: 40px;
 
   &__row {
   }

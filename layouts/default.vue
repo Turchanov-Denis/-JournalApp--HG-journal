@@ -5,8 +5,8 @@
     <div class="home">
       <div class="home__body">
         <ListBar v-if="this.$store.state.main.activeListBar"></ListBar>
-        <Nuxt />
-        <div class="comments">
+        <Nuxt v-if="this.$store.state.main.autorisation" />
+        <div v-if="this.$store.state.main.autorisation" class="comments">
       <button
         @click="
           () => {

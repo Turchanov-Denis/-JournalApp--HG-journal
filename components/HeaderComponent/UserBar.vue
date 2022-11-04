@@ -12,10 +12,18 @@
         </button>
       </div>
       <div class="user-bar__column">
-        <NuxtLink to="/profile"
+        <NuxtLink v-if="this.$store.state.main.autorisation" to="/profile"
           ><button class="user-bar__icon user-bar__icon_avatar">
             <img src="./UserBarImage/avatar.png" alt="favorites" /></button
         ></NuxtLink>
+        <div v-if="!this.$store.state.main.autorisation" @click="
+              () => {
+                this.$store.commit('main/changeActiveLogin');
+              }
+            "
+          ><button class="user-bar__icon user-bar__icon_avatar" style="display:flex;align-items:center;">
+            <img src="./UserBarImage/user.png" alt="favorites" /> Войти </button
+        ></div>
       </div>
     </div>
   </div>

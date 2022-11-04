@@ -2,6 +2,7 @@ export const state = () => ({
     activeComment: false,
     activeListBar: true,
     activeLogin: true,
+    autorisation: true,
 })
 
 export const getters = {
