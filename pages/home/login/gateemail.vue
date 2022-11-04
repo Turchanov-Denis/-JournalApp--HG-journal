@@ -3,17 +3,12 @@
     class="dialog__content-email"
   >
     <div style="width: 400px; position: relative">
-      <button
+      <Nuxt-link to="/home/login/gate"><button
         class="log-field__close"
         style="top: -20px"
-        @click="
-          () => {
-            this.$store.dispatch('login/switchGateMail');
-          }
-        "
       >
         X
-      </button>
+      </button></Nuxt-link>
       <b-form @submit="onSubmit" v-if="show">
         <b-form-group
           id="input-group-1"

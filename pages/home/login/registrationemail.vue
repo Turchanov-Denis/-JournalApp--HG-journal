@@ -1,17 +1,13 @@
 <template>
   <div  class="dialog__content-email">
     <div style="width: 400px; position: relative">
-      <button
+      <Nuxt-link to="/home/login/gate"><button
         class="log-field__close"
         style="top: -20px"
-        @click="
-          () => {
-            this.$store.dispatch('login/switchRegMail');
-          }
-        "
       >
         X
-      </button>
+      </button></Nuxt-link>
+      
       <b-form @submit="onSubmit" v-if="show">
         <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
           <b-form-input

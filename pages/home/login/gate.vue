@@ -1,33 +1,19 @@
 <template>
-  <div
-    class="dialog__content content-login"
-  >
+  <div class="dialog__content content-login">
     <div class="dialog__image"></div>
     <div class="log-field">
-      <button
-        class="log-field__close"
-        @click="
-          () => {
-            this.$store.commit('main/changeActiveLogin');
-          }
-        "
+      <Nuxt-link to="/home/"
+        ><button class="log-field__close">X</button></Nuxt-link
       >
-        X
-      </button>
       <div class="log-field__row"></div>
       <div class="log-field__title">Вход</div>
 
       <div>
-        <button
-          @click="
-            () => {
-              this.$store.dispatch('login/switchGateMail');
-            }
-          "
-          class="log-field__button"
+        <Nuxt-link to="/home/login/gateemail/"
+          ><button class="log-field__button">
+            <img src="../../../static/icon/mail.png" alt="" /> Почта
+          </button></Nuxt-link
         >
-          <img src="../../../static/icon/mail.png" alt="" /> Почта
-        </button>
         <button class="log-field__button">
           <img src="../../../static/icon/google.png" alt="" />Google
         </button>
@@ -38,16 +24,11 @@
 
       <div class="log-field__entire">
         Нет аккаунта?
-        <div
+        <Nuxt-link to="/home/login/registrationemail"><div
           style=""
-          @click="
-            () => {
-              this.$store.dispatch('login/switchRegMail');
-            }
-          "
         >
           Регистрация
-        </div>
+        </div></Nuxt-link>
       </div>
     </div>
   </div>
