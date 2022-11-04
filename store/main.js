@@ -1,6 +1,7 @@
 export const state = () => ({
     activeComment: false,
-    activeListBar: true
+    activeListBar: true,
+    activeLogin: true,
 })
 
 export const getters = {
@@ -15,15 +16,10 @@ export const mutations = {
     },
     changeListBar(state) {
         state.activeListBar = !state.activeListBar
+    },
+    changeActiveLogin(state) {
+        state.activeLogin = !state.activeLogin
     }
 }
 
-export const actions = {
-    async fetchCounter({ state }) {
-        // make request
-        const res = { data: 10 };
-        state.counter = res.data;
-        return res.data;
-    }
-}
 

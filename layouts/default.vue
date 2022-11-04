@@ -1,5 +1,6 @@
 <template>
   <div style>
+    <Dialog></Dialog>
     <Header></Header>
     <div class="home">
       <div class="home__body">
@@ -39,10 +40,11 @@
 <script>
 import Header from "../components/HeaderComponent/Header.vue";
 import ListBar from "../components/Home/ListBar.vue";
-import Comment from '../components/Home/Comment.vue'
+import Comment from '../components/Home/Comment.vue';
+import Dialog from "../components/Loggin/Dialog.vue";
 export default {
   name: "DefaultLayout",
-  components: { Header, ListBar,Comment },
+  components: { Header, ListBar,Comment,Dialog },
   data() {
     return {
       clipped: false,
