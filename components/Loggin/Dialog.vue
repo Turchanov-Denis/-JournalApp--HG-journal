@@ -1,36 +1,100 @@
 <template>
   <div v-if="activeLogin" class="dialog">
     <div class="dialog__content">
-      <div class="dialog__image"></div>
-      <div class="log-field">
-        <button
-          class="log-field__close"
-          @click="
-            () => {
-              this.$store.commit('main/changeActiveLogin');
-            }
-          "
-        >
-          X
-        </button>
-        <div class="log-field__row">
-          <div class="log-field__title">Регистрация</div>
+      <div
+        v-if="this.$store.state.login.activeLogin"
+        class="dialog__content content-login"
+      >
+        <div class="dialog__image"></div>
+        <div class="log-field">
+          <button
+            class="log-field__close"
+            @click="
+              () => {
+                this.$store.commit('main/changeActiveLogin');
+              }
+            "
+          >
+            X
+          </button>
+          <div class="log-field__row"></div>
+          <div class="log-field__title">Вход</div>
 
           <div>
-            <button class="log-field__button">
+            <button @click="()=>{this.$store.dispatch('login/switchMail')}"  class="log-field__button">
               <img src="../../static/icon/mail.png" alt="" /> Почта
             </button>
-            <button class="log-field__button"> <img src="../../static/icon/google.png" alt="" />Google</button>
-            <button class="log-field__button"> <img src="../../static/icon/apple.png" alt="" />Apple</button>
+            <button class="log-field__button">
+              <img src="../../static/icon/google.png" alt="" />Google
+            </button>
+            <button class="log-field__button">
+              <img src="../../static/icon/apple.png" alt="" />Apple
+            </button>
           </div>
 
-          <div class="log-field__entire">
+          <!-- <div class="log-field__entire">
             Есть аккаунт? <a href="#">Войти</a>
-          </div>
+          </div> -->
         </div>
-        <!-- <div class="log-field__row" >
-          <a href="#">Условия использования</a>
-        </div> -->
+      </div>
+      
+      
+      <div v-if="this.$store.state.login.activeMail" class="dialog__content-email">
+        <div style="width: 400px;position: relative;">
+            <button
+            class="log-field__close"
+            style="top:-20px"
+            @click="
+              ()=>{this.$store.dispatch('login/switchMail')}
+            "
+          >
+            X
+          </button>
+          <b-form @submit="onSubmit"  v-if="show">
+            <b-form-group
+              id="input-group-2"
+              label="Your Name:"
+              label-for="input-2"
+            >
+              <b-form-input
+                id="input-2"
+                v-model="form.name"
+                placeholder="Enter name"
+                required
+              ></b-form-input>
+            </b-form-group>
+            <b-form-group
+              id="input-group-1"
+              label="Email address:"
+              label-for="input-1"
+              description="We'll never share your email with anyone else."
+            >
+              <b-form-input
+                id="input-1"
+                v-model="form.email"
+                type="email"
+                placeholder="Enter email"
+                required
+              ></b-form-input>
+            </b-form-group>
+            <b-form-group @submit.stop.prevent>
+              <label for="text-password">Password</label>
+              <b-form-input
+                type="password"
+                id="text-password"
+                aria-describedby="password-help-block"
+                v-model="form.password"
+              ></b-form-input>
+              <b-form-text id="password-help-block">
+                Your password must be 8-20 characters long, contain letters and
+                numbers, and must not contain spaces, special characters, or
+                emoji.
+              </b-form-text>
+            </b-form-group>
+
+            <b-button type="submit">Submit</b-button>
+          </b-form>
+        </div>
       </div>
     </div>
   </div>
@@ -38,6 +102,23 @@
 
 <script>
 export default {
+  data() {
+    return {
+      form: {
+        email: "",
+        name: "",
+        checked: [],
+        password: "",
+      },
+      show: true,
+    };
+  },
+  methods: {
+    onSubmit(event) {
+      event.preventDefault();
+      alert(JSON.stringify(this.form));
+    },
+  },
   computed: {
     activeLogin() {
       return this.$store.state.main.activeLogin;
@@ -68,13 +149,24 @@ export default {
   }
   &__content {
     width: 600px;
-    height: 700px;
+    height: 650px;
     background: #ffffff;
     border-radius: 8px;
     display: flex;
     justify-content: flex-end;
     overflow: hidden;
+    &-email {
+        width: 600px;
+    height: 650px;
+    background: #ffffff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    }
   }
+
 }
 .log-field {
   position: relative;
@@ -138,7 +230,7 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      transform: translate(100%,60%);
+      transform: translate(100%, 60%);
     }
   }
   &__entire {
