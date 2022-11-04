@@ -1,5 +1,5 @@
 <template>
-  <div v-if="activeLogin" class="dialog">
+  <div  class="dialog">
     <div class="dialog__content">
       <Gate></Gate>
       <RegistrationEmail></RegistrationEmail>

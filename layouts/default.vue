@@ -1,6 +1,6 @@
 <template>
   <div style>
-    <Dialog></Dialog>
+    <!-- <Dialog></Dialog> -->
     <Header></Header>
     <div class="home">
       <div class="home__body">
@@ -45,6 +45,7 @@ import Dialog from "../components/Loggin/Dialog.vue";
 export default {
   name: "DefaultLayout",
   components: { Header, ListBar,Comment,Dialog },
+  
   data() {
     return {
       clipped: false,

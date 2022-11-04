@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="this.$store.state.login.activeLogin"
     class="dialog__content content-login"
   >
     <div class="dialog__image"></div>
@@ -27,13 +26,13 @@
           "
           class="log-field__button"
         >
-          <img src="../../static/icon/mail.png" alt="" /> Почта
+          <img src="../../../static/icon/mail.png" alt="" /> Почта
         </button>
         <button class="log-field__button">
-          <img src="../../static/icon/google.png" alt="" />Google
+          <img src="../../../static/icon/google.png" alt="" />Google
         </button>
         <button class="log-field__button">
-          <img src="../../static/icon/apple.png" alt="" />Apple
+          <img src="../../../static/icon/apple.png" alt="" />Apple
         </button>
       </div>
 
@@ -71,7 +70,7 @@
 
   &__image {
     width: 300px;
-    background-image: url("../../static/HgjLog1.jpg");
+    background-image: url("../../../static/HgjLog1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

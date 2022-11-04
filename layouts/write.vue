@@ -11,7 +11,7 @@ import Header from "../components/HeaderComponent/Header.vue";
 
 export default {
   components: {
-    Header,
+    Header
   },
 };
 </script>
@@ -21,11 +21,11 @@ export default {
   display: none;
 }
 .v-card__title {
- span {
-  width: 150px;
-  height: 0;
-  background: rgba(255, 255, 255, 0);
-  transform: scale(1);
- }
+  span {
+    width: 150px;
+    height: 0;
+    background: rgba(255, 255, 255, 0);
+    transform: scale(1);
+  }
 }
 </style>
