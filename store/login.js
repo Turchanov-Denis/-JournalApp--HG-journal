@@ -1,6 +1,7 @@
 export const state = () => ({
     activeLogin: true,
-    activeMail: false
+    activeMail: false,
+    activeGateEmail:false,
 })
 
 
@@ -10,14 +11,23 @@ export const mutations = {
     },
     changeActiveMail(state) {
         state.activeMail = !state.activeMail
-    }
+    },
+    changeActiveMailGate(state) {
+        state.activeGateEmail = !state.activeGateEmail
+    },
+
 }
 
 
 export const actions = {
-    async switchMail(context) {
+    async switchRegMail(context) {
         context.commit('changeActiveLogin');
         context.commit('changeActiveMail');
+
+    },
+    async switchGateMail(context) {
+        context.commit('changeActiveLogin');
+        context.commit('changeActiveMailGate');
 
     }
 }
