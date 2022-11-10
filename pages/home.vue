@@ -1,28 +1,27 @@
 <template>
   <div class="article-content">
-    <div
-      class="articles"
-      v-for="article in this.$store.state.articles.articles"
-      :key="article.id"
-    >
-      <Nuxt-link :to="'/article/' +  article.id"
-        ><Article
-          
-          :title="article.title"
-          :userName="article.userName"
-          :subtitle="article.subtitle"
-          :count="article.count"
-        ></Article
-      ></Nuxt-link>
-      <NuxtChild></NuxtChild>
-    </div>
+    <template v-if="this.$store.state.main.autorisation"
+      ><div
+        class="articles"
+        v-for="article in this.$store.state.articles.articles"
+        :key="article.id"
+      >
+        <Nuxt-link :to="'/article/' + article.id"
+          ><Article
+            :title="article.title"
+            :userName="article.userName"
+            :subtitle="article.subtitle"
+            :count="article.count"
+          ></Article
+        ></Nuxt-link></div
+    ></template>
+    <NuxtChild></NuxtChild>
   </div>
 </template>
 
 <script>
 import ListBar from "../components/Home/ListBar.vue";
 import Article from "../components/Home/Article.vue";
-
 
 export default {
   name: "IndexPage",
@@ -43,14 +42,13 @@ export default {
   overflow-x: auto;
   scroll-snap-type: y mandatory;
   align-items: center;
-  
+
   scrollbar-width: none;
   &::-webkit-scrollbar {
-  display: none;
-}
+    display: none;
+  }
 }
 .articles {
-  
   padding: 30px;
   flex-grow: 1;
 }
@@ -58,5 +56,4 @@ export default {
   width: 100%;
   display: flex;
 }
-
 </style>

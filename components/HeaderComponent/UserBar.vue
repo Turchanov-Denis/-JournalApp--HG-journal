@@ -16,14 +16,10 @@
           ><button class="user-bar__icon user-bar__icon_avatar">
             <img src="./UserBarImage/avatar.png" alt="favorites" /></button
         ></NuxtLink>
-        <div v-if="!this.$store.state.main.autorisation" @click="
-              () => {
-                this.$store.commit('main/changeActiveLogin');
-              }
-            "
+        <Nuxt-link to="/home/login/gate"><div v-if="!this.$store.state.main.autorisation" 
           ><button class="user-bar__icon user-bar__icon_avatar" style="display:flex;align-items:center;">
             <img src="./UserBarImage/user.png" alt="favorites" /> Войти </button
-        ></div>
+        ></div></Nuxt-link>
       </div>
     </div>
   </div>

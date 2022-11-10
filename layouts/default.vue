@@ -5,33 +5,36 @@
     <div class="home">
       <div class="home__body">
         <ListBar v-if="this.$store.state.main.activeListBar"></ListBar>
-        <Nuxt v-if="this.$store.state.main.autorisation" />
+        <Nuxt />
         <div v-if="this.$store.state.main.autorisation" class="comments">
-      <button
-        @click="
-          () => {
-            this.$store.commit('main/changeActiveComment');
-          }
-        "
-      >
-        <div
-          :class="
-            this.$store.state.main.activeComment
-              ? 'comments__title'
-              : 'comments__title_active'
-          "
-        >
-          Комментарии
+          <button
+            @click="
+              () => {
+                this.$store.commit('main/changeActiveComment');
+              }
+            "
+          >
+            <div
+              :class="
+                this.$store.state.main.activeComment
+                  ? 'comments__title'
+                  : 'comments__title_active'
+              "
+            >
+              Комментарии
+            </div>
+          </button>
+          <div
+            class="comments__content"
+            v-for="comment in this.$store.state.comments.comments"
+            :key="comment.id"
+          >
+            <Comment
+              :userName="comment.userName"
+              :text="comment.text"
+            ></Comment>
+          </div>
         </div>
-      </button>
-      <div
-        class="comments__content"
-        v-for="comment in this.$store.state.comments.comments"
-        :key="comment.id"
-      >
-        <Comment :userName="comment.userName" :text="comment.text"></Comment>
-      </div>
-    </div>
       </div>
     </div>
   </div>
@@ -40,12 +43,12 @@
 <script>
 import Header from "../components/HeaderComponent/Header.vue";
 import ListBar from "../components/Home/ListBar.vue";
-import Comment from '../components/Home/Comment.vue';
+import Comment from "../components/Home/Comment.vue";
 import Dialog from "../components/Loggin/Dialog.vue";
 export default {
   name: "DefaultLayout",
-  components: { Header, ListBar,Comment,Dialog },
-  
+  components: { Header, ListBar, Comment, Dialog },
+
   data() {
     return {
       clipped: false,
@@ -75,7 +78,7 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import '../assets/nullstyle.scss';
+@import "../assets/nullstyle.scss";
 body {
   overflow: hidden;
 }
@@ -95,7 +98,7 @@ body {
     font-size: 20px;
     line-height: 23px;
     color: rgb(23, 23, 23);
-    
+
     &_active {
       writing-mode: vertical-rl;
       transform: scale(-1);
@@ -108,11 +111,9 @@ body {
   padding-top: 20px;
   &__body {
     display: flex;
-
   }
 }
 .v-btn__content {
-  
   height: 0;
 }
 a {
