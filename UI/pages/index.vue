@@ -4,8 +4,6 @@
 <script>
 
 export default {
-  created() {
-    this.$router.push('/home')
-  },
+  middleware: ['auth']
 }
 </script>
