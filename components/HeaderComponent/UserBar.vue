@@ -2,24 +2,33 @@
   <div class="user-bar">
     <div class="user-bar__body">
       <div class="user-bar__column">
-        <button class="user-bar__icon">
-          <img src="./UserBarImage/message.png" alt="shopCart" />
-        </button>
+        <NuxtLink to="/messages">
+          <button class="user-bar__icon">
+            <img src="./UserBarImage/message.png" alt="shopCart" /></button
+        ></NuxtLink>
       </div>
       <div class="user-bar__column">
-        <button class="user-bar__icon">
-          <img src="./UserBarImage/bell.png" alt="favorites" />
-        </button>
+        <NuxtLink to="/notification">
+          <button class="user-bar__icon">
+            <img src="./UserBarImage/bell.png" alt="favorites" />
+          </button>
+        </NuxtLink>
       </div>
       <div class="user-bar__column">
         <NuxtLink v-if="this.$store.state.main.autorisation" to="/profile"
           ><button class="user-bar__icon user-bar__icon_avatar">
             <img src="./UserBarImage/avatar.png" alt="favorites" /></button
         ></NuxtLink>
-        <Nuxt-link to="/home/login/gate"><div v-if="!this.$store.state.main.autorisation" 
-          ><button class="user-bar__icon user-bar__icon_avatar" style="display:flex;align-items:center;">
-            <img src="./UserBarImage/user.png" alt="favorites" /> Войти </button
-        ></div></Nuxt-link>
+        <Nuxt-link to="/home/login/gate"
+          ><div v-if="!this.$store.state.main.autorisation">
+            <button
+              class="user-bar__icon user-bar__icon_avatar"
+              style="display: flex; align-items: center"
+            >
+              <img src="./UserBarImage/user.png" alt="favorites" /> Войти
+            </button>
+          </div></Nuxt-link
+        >
       </div>
     </div>
   </div>

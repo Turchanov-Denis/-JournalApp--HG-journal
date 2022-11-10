@@ -6,7 +6,13 @@
       <div class="home__body">
         <ListBar v-if="this.$store.state.main.activeListBar"></ListBar>
         <Nuxt />
-        <div v-if="this.$store.state.main.autorisation" class="comments">
+        <div
+          v-if="
+            this.$store.state.main.autorisation &&
+            !this.$route.path.includes('messages')
+          "
+          class="comments"
+        >
           <button
             @click="
               () => {
@@ -24,6 +30,7 @@
               Комментарии
             </div>
           </button>
+
           <div
             class="comments__content"
             v-for="comment in this.$store.state.comments.comments"
@@ -108,9 +115,10 @@ body {
 .home {
   background: #f2f2f2;
   min-height: 800px;
-  padding-top: 20px;
+  // padding-top: 20px;
   &__body {
     display: flex;
+    justify-content: space-between;
   }
 }
 .v-btn__content {

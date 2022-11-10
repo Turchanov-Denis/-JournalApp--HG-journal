@@ -24,6 +24,7 @@ export default {
 <style lang="scss">
 .comment {
   width: 320px;
+  
   &__text {
     font-family: "Roboto";
     font-style: normal;
