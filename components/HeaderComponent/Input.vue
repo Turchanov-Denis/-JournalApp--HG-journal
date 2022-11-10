@@ -1,8 +1,24 @@
 <template>
-  <input class="find-input" placeholder="Find" type="text" />
+  <input
+    class="find-input"
+    placeholder="Find"
+    type="text"
+    @input=" (event) => test(event)"
+    :value="this.$store.state.main.inputValue"
+  />
 </template>
 
+<script>
 
+  export default {
+    methods: {
+      test(event) {
+        this.$store.commit('main/changeInputValue', event.target.value)
+      }
+    }
+  }
+
+</script>
 <style lang="scss">
 .find-input {
   width: 519px;

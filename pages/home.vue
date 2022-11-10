@@ -3,7 +3,7 @@
     <template v-if="this.$store.state.main.autorisation"
       ><div
         class="articles"
-        v-for="article in this.$store.state.articles.articles"
+        v-for="article in filteredArticle"
         :key="article.id"
       >
         <Nuxt-link :to="'/article/' + article.id"
@@ -30,6 +30,11 @@ export default {
     ListBar,
     Article,
   },
+  computed: {
+    filteredArticle() {
+      return this.$store.state.articles.articles.filter(item => (item.title.toUpperCase()).includes(this.$store.state.main.inputValue.toUpperCase()))
+    }
+  }
 };
 </script>
 

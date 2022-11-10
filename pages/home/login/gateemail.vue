@@ -38,7 +38,7 @@
           </b-form-text>
         </b-form-group>
 
-        <b-button type="submit">Submit</b-button>
+        <b-button  type="submit">Submit</b-button>
       </b-form>
     </div>
   </div>
@@ -59,7 +59,9 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      alert(JSON.stringify(this.form));
+      this.$store.commit('main/changeActiveLogin')
+      this.$router.push('/home')
+      // alert(JSON.stringify(this.form));
     },
   },
   computed: {

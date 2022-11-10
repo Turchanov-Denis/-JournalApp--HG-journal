@@ -2,6 +2,7 @@ export const state = () => ({
     activeComment: false,
     activeListBar: true,
     autorisation: true,
+    inputValue: "",
 })
 
 export const getters = {
@@ -18,7 +19,10 @@ export const mutations = {
         state.activeListBar = !state.activeListBar
     },
     changeActiveLogin(state) {
-        state.activeLogin = !state.activeLogin
+        state.autorisation = !state.autorisation
+    },
+    changeInputValue(state, value) {
+        state.inputValue = value
     }
 }
 
