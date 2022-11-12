@@ -1,9 +1,9 @@
 <template>
     <div class="messages">
       <div class="messages__leftBar">
-          <Label name="Rem" message="awdawdad" time="18:00" token="213"></Label>
+          <Label name="Rem" message="awdawdad" time="18:00" token="1"></Label>
       </div>
-      <div class="messages__field">
+      <div class="messages__field" style="width: 100%;">
           <NuxtChild></NuxtChild>
       </div>
     </div>

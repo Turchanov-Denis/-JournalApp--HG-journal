@@ -1,5 +1,5 @@
 <template>
-  <Nuxt-link :to="'/messages/' + token">
+  <Nuxt-link :to="'/messages/' + token" style="color:black">
     <div class="destination-label">
       <div class="destination-label__column">
         <div
@@ -13,7 +13,7 @@
         </div>
       </div>
 
-      <div class="destination-label__column" style="flex-grow: 2">
+      <div class="destination-label__column" style="flex-grow: 2;display:block;">
         <div class="destination-label__user-name">
           {{ name }}
         </div>
@@ -45,6 +45,8 @@ export default {
   justify-content: space-between;
   &__column {
     flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
   &__avatar {
     width: 55px;
