@@ -43,6 +43,7 @@ export default {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin: 10px auto;
   &__column {
     flex-grow: 1;
     display: flex;

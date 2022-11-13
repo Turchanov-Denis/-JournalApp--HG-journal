@@ -1,6 +1,6 @@
 <template>
   <div class="list-bar">
-    <button class="list-bar__button">Популярное</button>
+    <button class="list-bar__button active">Популярное</button>
     <button class="list-bar__button">Свежее</button>
     <button class="list-bar__button">Моя лента</button>
     <button class="list-bar__button">Закладки</button>
