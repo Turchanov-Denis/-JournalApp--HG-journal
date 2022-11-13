@@ -6,14 +6,13 @@
         v-for="article in filteredArticle"
         :key="article.id"
       >
-        <Nuxt-link :to="'/article/' + article.id"
-          ><Article
-            :title="article.title"
-            :userName="article.userName"
-            :subtitle="article.subtitle"
-            :count="article.count"
-          ></Article
-        ></Nuxt-link></div
+        <Article
+          :title="article.title"
+          :userName="article.userName"
+          :subtitle="article.subtitle"
+          :count="article.count"
+          :id="article.id"
+        ></Article></div
     ></template>
     <NuxtChild></NuxtChild>
   </div>
@@ -32,9 +31,13 @@ export default {
   },
   computed: {
     filteredArticle() {
-      return this.$store.state.articles.articles.filter(item => (item.title.toUpperCase()).includes(this.$store.state.main.inputValue.toUpperCase()))
-    }
-  }
+      return this.$store.state.articles.articles.filter((item) =>
+        item.title
+          .toUpperCase()
+          .includes(this.$store.state.main.inputValue.toUpperCase())
+      );
+    },
+  },
 };
 </script>
 

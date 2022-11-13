@@ -2,23 +2,24 @@
   <article class="article">
     <div class="article__content">
       <!-- header -->
-      <div class="article-header">
-        <img
-          class="article-header__user-icon"
-          src="../HeaderComponent/UserBarImage/avatar.png"
-        />
-        <div class="article-header__user-name">{{ userName }}</div>
-      </div>
-      <!-- title -->
-      <div class="article__title">{{ title }}</div>
-      <div class="article__subtitle">{{ subtitle }}</div>
+      <Nuxt-link :to="'/article/' + id">
+        <div class="article-header">
+          <img
+            class="article-header__user-icon"
+            src="../HeaderComponent/UserBarImage/avatar.png"
+          />
+          <div class="article-header__user-name">{{ userName }}</div>
+        </div>
+        <!-- title -->
+        <div class="article__title">{{ title }}</div>
+        <div class="article__subtitle">{{ subtitle }}</div>
 
-      <!-- main image -->
-      <img class="article__image" src="./article.png" />
-
+        <!-- main image -->
+        <img class="article__image" src="./article.png" />
+      </Nuxt-link>
       <!-- action bar -->
       <div class="action-bar">
-        <div class="action-bar__column" style="width: 320px;">
+        <div class="action-bar__column" style="width: 320px">
           <button class="action-bar__icon">
             <img src="./actionBarImage/comment.png" alt="favorites" />
           </button>
@@ -32,12 +33,24 @@
           </button>
         </div>
         <div class="action-bar__column">
-            <button class="action-bar__icon">
-            <img src="./actionBarImage/arrow.png" alt="favorites" style="opacity: 0.5;" />
+          <button class="action-bar__icon" @click="()=> {
+            this.count--
+          }">
+            <img
+              src="./actionBarImage/arrow.png"
+              alt="favorites"
+              style="opacity: 0.5"
+            />
           </button>
-            <div class="action-bar__count">{{count}}</div>
-            <button class="action-bar__icon">
-            <img src="./actionBarImage/arrow.png" style="transform:scale(-1); opacity: 0.5;" alt="favorites" />
+          <div class="action-bar__count">{{ count }}</div>
+          <button class="action-bar__icon" @click="()=> {
+            this.count++
+          }">
+            <img
+              src="./actionBarImage/arrow.png"
+              style="transform: scale(-1); opacity: 0.5"
+              alt="favorites"
+            />
           </button>
         </div>
       </div>
@@ -47,7 +60,7 @@
   
   <script>
 export default {
-  props: ["title", "subtitle", "userName","count"],
+  props: ["title", "subtitle", "userName", "count", "id"],
   data() {
     return {};
   },
@@ -108,11 +121,11 @@ export default {
 }
 
 .action-bar {
-    padding: 0 20px;
-   height: 70px;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+  padding: 0 20px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   &__column {
     display: flex;
     align-items: center;
@@ -135,5 +148,4 @@ export default {
     color: rgb(71, 218, 52);
   }
 }
-
 </style>
