@@ -18,11 +18,11 @@ $ npm run start
 
 ## Home
 
-![home page](/static/readme/Screenshot_1.png)
+![home page](UI/static/readme/Screenshot_1.png)
 
 ## Profile
-![some page](/static/readme/Screenshot_2.png)
+![some page](UI/static/readme/Screenshot_2.png)
 
 ## Loggining
 
-![some page](/static/readme/Screenshot_3.png)
+![some page](UI/static/readme/Screenshot_3.png)
