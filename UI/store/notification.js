@@ -1,3 +1,8 @@
 export const state = () => ({
-    notification: ['Ra', 'Fu']
+    notification: [{
+        url: '//',
+        text: ' Rafu подписался на ваш блог',
+        link: '//',
+        time: '10 ноября в 19:00'
+    }]
 })
